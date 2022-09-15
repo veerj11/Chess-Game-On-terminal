@@ -1,0 +1,26 @@
+if(pawnY==1)
+		{
+
+			if (pawnX == thatX && thatY == pawnY + 1 && thatSpace->getColor() == NONE)
+		{
+			thatSpace->setSpace(thisPawn);
+			thisPawn->setEmpty();
+			return true;
+		}
+
+		else if (pawnX == thatX && thatY == pawnY + 2 && thatSpace->getColor() == NONE)
+			{
+			thatSpace->setSpace(thisPawn);
+			thisPawn->setEmpty();
+			return true;
+			}
+		else if ((pawnX + 1 == thatX || pawnX - 1 == thatX) && pawnY + 1 == thatY  && thatSpace->getColor() == BLACK)
+			{
+				thatSpace->setSpace(thisPawn);
+				thisPawn->setEmpty();
+				 if(thatY==7)
+                  pawnPromotion(thatSpace);
+				return true;
+			}
+			else return false;
+		}
